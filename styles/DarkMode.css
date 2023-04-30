@@ -1,0 +1,35 @@
+/* Dark mode styles */
+:root {
+  --bs-bg: #212529;
+  --bs-light: #343a40;
+  --bs-dark: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-info: #17a2b8;
+  --bs-success: #28a745;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+}
+
+[data-theme='dark'] {
+  --bs-bg: #343a40;
+  --bs-light: #495057;
+  --bs-dark: #212529;
+  --bs-white: #ced4da;
+  --bs-gray: #adb5bd;
+}
+
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+}
+
+.dark-mode-toggle:focus {
+  outline: none;
+}
