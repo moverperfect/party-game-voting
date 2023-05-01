@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { Game } from '../helpers/game';
+import React, { useEffect, useState } from 'react'
+import { Game } from '../helpers/game'
 
 const RankedGames = ({ data }) => {
-  const [games, setGames] = useState<Game[]>([]);
+  const [games, setGames] = useState<Game[]>([])
 
   const fetchGames = async () => {
     try {
-      const response = await fetch('/api/games');
-      const data: Game[] = await response.json();
-      const sortedData = data.sort((a, b) => b.rating - a.rating);
-      setGames(sortedData);
+      const response = await fetch('/api/games')
+      const data: Game[] = await response.json()
+      const sortedData = data.sort((a, b) => b.rating - a.rating)
+      setGames(sortedData)
     } catch (error) {
-      console.error('Error fetching games:', error);
+      console.error('Error fetching games:', error)
     }
-  };
+  }
 
   useEffect(() => {
-    fetchGames();
+    fetchGames()
     const intervalId = setInterval(() => {
-      fetchGames();
-    }, 5000);
+      fetchGames()
+    }, 5000)
 
     return () => {
-      clearInterval(intervalId);
-    };
-  }, [data]);
+      clearInterval(intervalId)
+    }
+  }, [data])
 
   return (
-    <div className="container">
-      <table className="table table-striped table-hover">
-        <thead className="thead-light">
+    <div className='container'>
+      <table className='table table-striped table-hover'>
+        <thead className='thead-light'>
           <tr>
-            <th scope="col">Rank</th>
+            <th scope='col'>Rank</th>
             {/* <th scope="col">ID</th> */}
-            <th scope="col">Name</th>
-            <th scope="col">Rating</th>
+            <th scope='col'>Name</th>
+            <th scope='col'>Rating</th>
             {/* <th scope="col">RD</th>
           <th scope="col">Volatility</th> */}
           </tr>
@@ -53,7 +53,7 @@ const RankedGames = ({ data }) => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default RankedGames;
+export default RankedGames

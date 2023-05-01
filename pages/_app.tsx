@@ -1,10 +1,10 @@
-import type { AppProps } from 'next/app';
-import { Analytics } from '@vercel/analytics/react';
-import DarkModeToggle from '../components/DarkModeToggle';
+import type { AppProps } from 'next/app'
+import { Analytics } from '@vercel/analytics/react'
+import DarkModeToggle from '../components/DarkModeToggle'
 
-import '../styles/DarkMode.css';
+import '../styles/DarkMode.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <>
       <DarkModeToggle />
@@ -12,6 +12,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Analytics />
     </>
-  );
+  )
 }
-export default MyApp;
+export default MyApp
