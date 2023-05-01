@@ -2,8 +2,6 @@ import { GameForm } from '../components/GameForm'
 import React, { useEffect, useState } from 'react'
 import RankedGames from '../components/RankedGames'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 const HomePage = () => {
   const [triggerUpdateVar, setTriggerUpdateVar] = useState(1)
 
