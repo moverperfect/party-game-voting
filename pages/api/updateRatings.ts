@@ -14,6 +14,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const payload = req.body as UpdateRatingsPayload
 
     try {
+      await db.query('START TRANSACTION')
+
       const [player1Data] = await db.query('SELECT * FROM games WHERE id = ?', [
         payload.player1Id
       ])
@@ -37,12 +39,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           [player2.rating, player2.rd, player2.vol, player2.id]
         )
 
+        await db.query('COMMIT')
+
         res.status(200).json({ message: 'Ratings updated' })
       } else {
+        await db.query('ROLLBACK')
+
         res.status(400).json({ message: 'Invalid game IDs' })
       }
     } catch (error) {
       console.error(error)
+
+      await db.query('ROLLBACK')
+
       res.status(500).json({ message: 'Server error' })
     }
   } else {

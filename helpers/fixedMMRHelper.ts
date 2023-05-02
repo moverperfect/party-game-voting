@@ -12,6 +12,4 @@ export function updateRatings (player1: Game, player2: Game, result: number) {
   } else {
     // Do nothing
   }
-
-  console.log(player1.name + ' ' + player1.rating)
 }
