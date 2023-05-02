@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { Game } from '../../helpers/game'
 import { updateRatings } from '../../helpers/fixedMMRHelper'
 import db from '../../helpers/db'
+import kv from '@vercel/kv'
 
 interface UpdateRatingsPayload {
   player1Id: number
@@ -37,6 +38,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           [player2.rating, player2.rd, player2.vol, player2.id]
         )
 
+        kv.del('default:games')
         res.status(200).json({ message: 'Ratings updated' })
       } else {
         res.status(400).json({ message: 'Invalid game IDs' })
