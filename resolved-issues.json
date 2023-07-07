@@ -1,0 +1,62 @@
+[
+  {
+    "id": "SWRM-100-glicko2-1.1.0",
+    "paths": [
+      "glicko2"
+    ],
+    "notes": "Github states this package uses MIT Licence"
+  },
+  {
+    "id": "SWRM-100-seq-queue-0.0.5",
+    "paths": [
+      "mysql2>seq-queue"
+    ],
+    "notes": "Code Licence states this package uses MIT Licence"
+  },
+  {
+    "id": "SWRM-104-@fortawesome/free-regular-svg-icons-6.4.0",
+    "paths": [
+      "@fortawesome/free-regular-svg-icons"
+    ],
+    "notes": "Package uses MIT Licence"
+  },
+  {
+    "id": "SWRM-104-@fortawesome/free-solid-svg-icons-6.4.0",
+    "paths": [
+      "@fortawesome/free-solid-svg-icons"
+    ],
+    "notes": "Package uses MIT Licence"
+  },
+  {
+    "id": "SWRM-201-@fortawesome/fontawesome-common-types-6.4.0-postinstall",
+    "paths": [
+      "@fortawesome/fontawesome-svg-core>@fortawesome/fontawesome-common-types",
+      "@fortawesome/free-regular-svg-icons>@fortawesome/fontawesome-common-types",
+      "@fortawesome/free-solid-svg-icons>@fortawesome/fontawesome-common-types",
+      "@fortawesome/react-fontawesome>@fortawesome/fontawesome-svg-core>@fortawesome/fontawesome-common-types"
+    ],
+    "notes": "attribution.js Prints Attribution information"
+  },
+  {
+    "id": "SWRM-201-@fortawesome/fontawesome-svg-core-6.4.0-postinstall",
+    "paths": [
+      "@fortawesome/fontawesome-svg-core",
+      "@fortawesome/react-fontawesome>@fortawesome/fontawesome-svg-core"
+    ],
+    "notes": "attribution.js Prints Attribution information"
+  },
+  {
+    "id": "SWRM-201-@fortawesome/free-regular-svg-icons-6.4.0-postinstall",
+    "paths": [
+      "@fortawesome/free-regular-svg-icons"
+    ],
+    "notes": "attribution.js Prints Attribution information"
+  },
+  {
+    "id": "SWRM-201-@fortawesome/free-solid-svg-icons-6.4.0-postinstall",
+    "paths": [
+      "@fortawesome/free-solid-svg-icons"
+    ],
+    "notes": "attribution.js Prints Attribution information"
+  }
+]

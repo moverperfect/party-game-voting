@@ -1,0 +1,11 @@
+{
+  "audit": {
+    "includeDev": false,
+    "showVersions": false,
+    "maxDepth": 10,
+    "minDisplayedSeverity": "high",
+    "loadDataFrom": "registry",
+    "outputPath": "sandworm",
+    "failOn": ["*.moderate", "*.critical", "*.high"]
+  }
+}
