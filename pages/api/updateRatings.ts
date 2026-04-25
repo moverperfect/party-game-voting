@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing, @typescript-eslint/strict-boolean-expressions */
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Game } from '../../helpers/game'
 import { updateRatings } from '../../helpers/fixedMMRHelper'
@@ -9,7 +10,11 @@ interface UpdateRatingsPayload {
   result: number
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+interface UpdateRatingsResponse {
+  message: string
+}
+
+export default async function handler (req: NextApiRequest, res: NextApiResponse<UpdateRatingsResponse>): Promise<void> {
   if (req.method === 'POST') {
     const payload = req.body as UpdateRatingsPayload
 
@@ -18,15 +23,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       const [player1Data] = await db.query('SELECT * FROM games WHERE id = ? FOR UPDATE;', [
         payload.player1Id
-      ])
+      ]) as unknown as [Game[]]
       const [player2Data] = await db.query('SELECT * FROM games WHERE id = ? FOR UPDATE;', [
         payload.player2Id
-      ])
+      ]) as unknown as [Game[]]
 
-      const player1: Game = player1Data[0]
-      const player2: Game = player2Data[0]
+      const player1 = player1Data[0]
+      const player2 = player2Data[0]
 
-      if (player1 && player2) {
+      if (player1 !== undefined && player2 !== undefined) {
         updateRatings(player1, player2, payload.result)
 
         await db.query(
