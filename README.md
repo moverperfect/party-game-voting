@@ -86,7 +86,7 @@ npm install
 Create an environment file with your database connection string:
 
 ```bash
-DATABASE_URL=mysql://username:password@host:3306/database_name
+DATABASE_URL=<your-mysql-connection-string>
 ```
 
 ### Start the development server

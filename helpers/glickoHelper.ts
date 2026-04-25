@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing, @typescript-eslint/strict-boolean-expressions */
 import { Glicko2 } from 'glicko2'
 
 import { Game } from './game'
@@ -11,7 +12,7 @@ const settings = {
 
 export const glicko = new Glicko2(settings)
 
-export function updateRatings (player1: Game, player2: Game, result: number) {
+export function updateRatings (player1: Game, player2: Game, result: number): void {
   const player1Glicko = glicko.makePlayer(
     player1.rating,
     player1.rd,
@@ -33,5 +34,5 @@ export function updateRatings (player1: Game, player2: Game, result: number) {
   player2.rd = player2Glicko.getRd()
   player2.vol = player2Glicko.getVol()
 
-  console.log(player1.name + ' ' + player1.rating)
+  console.log(`${player1.name} ${String(player1.rating)}`)
 }
