@@ -4,7 +4,7 @@
 
 Choose between two games at a time and build a ranked list for your next LAN party or games night.
 
-**Live demo:** https://gamerank.moverperfect.com
+**Live demo:** <https://gamerank.moverperfect.com>
 
 ## Overview
 
