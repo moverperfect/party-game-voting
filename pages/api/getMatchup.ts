@@ -48,7 +48,8 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
       res.status(500).json({ error: 'Error fetching games from the database' })
     }
   } else {
+    const method: string = typeof req.method === 'string' ? req.method : 'UNKNOWN'
     res.setHeader('Allow', ['GET'])
-    res.status(405).json({ error: `Method ${req.method ?? 'UNKNOWN'} not allowed` })
+    res.status(405).json({ error: `Method ${method} not allowed` })
   }
 }
