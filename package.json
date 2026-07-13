@@ -39,7 +39,7 @@
     "project": "./tsconfig.eslint.json"
   },
   "overrides": {
-    "@babel/runtime": "7.29.2",
+    "@babel/runtime": "7.29.7",
     "postcss": "8.5.12",
     "socket.io-parser": "4.2.6"
   }
